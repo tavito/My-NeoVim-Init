@@ -33,8 +33,8 @@ nnoremap <leader>s :w<CR> " espacio + s --> Guardar archivo
 nnoremap <leader>e :e $MYVIMRC<CR> " espacio + e --> Abrir el archivo init.vim
 nnoremap <leader>q :wq<CR> " espacio + q --> Guardar y salir 
 nnoremap <leader>r :exec '!python' shellescape(@%,1)<CR>
+nnoremap <leader>x :qa!<CR> " espacio + x --> Cerrar todo sin guardar
 
-"Usar <leader>  
 vnoremap <leader>y " +y
 nnoremap <leader>y " +y
 
@@ -46,15 +46,12 @@ vnoremap <leader>p " +p
 nnoremap <leader>P " +P
 vnoremap <leader>P " +P
 
+"Usar <leader> t para ir al árbol de directorios/archivos
+"Usar <leader> c para ir al tab de código
+nnoremap <leader>t <C-w>h<CR>
+nnoremap <leader>c <C-w>l<CR>
+
 autocmd FileType python nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<CR>
-"Moverse al buffer siguiente con <leader> + l
-"nnoremap <leader>l :bnext<CR>
-
-" Moverse al buffer anterior con <leader> + j
-"nnoremap <leader>j :bprevious<CR>
-
-" Cerrr el buffer actual con <leader> + q
-"nnoremap <leader>q :bdelete<CR>
 
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-easy-align'
