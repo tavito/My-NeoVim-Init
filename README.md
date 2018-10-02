@@ -12,9 +12,9 @@ La idea es mantener las versiones de este archivo en Github para poder tenerlo d
 
 Para instalar esta configuración ejecuta los siguientes comandos:
 
-$ cd ~
-$ mkdir -p ~/.config
-$ git clone https://github.com/tavito/My-NeoVim-Init.git
+    $ cd ~
+    $ mkdir -p ~/.config
+    $ git clone https://github.com/tavito/My-NeoVim-Init.git
 
 Luego ejecuta :PlugInstall desde NeoVim
 
