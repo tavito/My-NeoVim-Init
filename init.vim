@@ -32,7 +32,6 @@ let g:mapleader = ' ' " Definir <espacio> como teclas lider
 nnoremap <leader>s :w<CR> " espacio + s --> Guardar archivo
 nnoremap <leader>e :e $MYVIMRC<CR> " espacio + e --> Abrir el archivo init.vim
 nnoremap <leader>q :wq<CR> " espacio + q --> Guardar y salir 
-nnoremap <leader>r :exec '!python' shellescape(@%,1)<CR>
 nnoremap <leader>x :qa!<CR> " espacio + x --> Cerrar todo sin guardar
 
 vnoremap <leader>y " +y
@@ -51,9 +50,12 @@ vnoremap <leader>P " +P
 nnoremap <leader>t <C-w>h<CR>
 nnoremap <leader>c <C-w>l<CR>
 
-autocmd FileType python nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<CR>
+" autocmd FileType python nnoremap <buffer> <F5> :w<CR> :exec '!python3' shellescape(@%, 1)<CR>
+imap <F5> <Esc>:w<CR> :exec '!python3' shellescape(@%, 1)<CR> " Al presionar F5 en modo INSERT guarda y ejecuta archivos .py
+map <F5> <Esc>:w<CR> :exec '!python3' shellescape(@%, 1)<CR> " Al presionar F5 en como COMMAND ejecuta archivos .py
 
 call plug#begin('~/.vim/plugged')
+Plug 'davidhalter/jedi-vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
